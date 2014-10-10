@@ -1,23 +1,28 @@
 
 //bootstrap and bootstrap components
 
-@import "CSS:../../bower_components/bootstrap/dist/css/bootstrap";  
-@import "CSS:../../bower_components/bootstrap/dist/css/bootstrap-theme";  
+//@import "CSS:../../bower_components/bootstrap/dist/css/bootstrap";  
+//@import "CSS:../../bower_components/bootstrap/dist/css/bootstrap-theme";  
 
-@import "CSS:../../bower_components/bootstrap-datepicker/css/datepicker";
-@import "CSS:../../bower_components/bootstrap-datepicker/css/datepicker3";
+//@import "CSS:../../bower_components/bootstrap-datepicker/css/datepicker";
+//@import "CSS:../../bower_components/bootstrap-datepicker/css/datepicker3";
 
-@import "CSS:../../bower_components/bootstrap-table/dist/bootstrap-table.min";
+//@import "CSS:../../bower_components/bootstrap-table/dist/bootstrap-table.min";
 
-@import "CSS:../../bower_components/bootstrap-tags/dist/css/bootstrap-tags";
+//@import "CSS:../../bower_components/bootstrap-tags/dist/css/bootstrap-tags";
 
 //@import "CSS:../../bower_components/sass-bootstrap-glyphicons/css/bootstrap";
-@import "CSS:../../bower_components/sass-bootstrap-glyphicons/css/bootstrap-glyphicons";
-@import "CSS:../../bower_components/sass-bootstrap-glyphicons/css/docs";
+//@import "CSS:../../bower_components/sass-bootstrap-glyphicons/css/bootstrap-glyphicons";
+//@import "CSS:../../bower_components/sass-bootstrap-glyphicons/css/docs";
 
 
+@import "../../bower_components/fontawesome/scss/font-awesome";
 
-//sementic ui
+@import "../../bower_components/typeplate-starter-kit/scss/_typeplate";
+
+@import "CSS:../../bower_components/webfont-opensans/stylesheet";
+
+//semantic ui
 @import "CSS:../../bower_components/semantic-ui/build/packaged/css/semantic";
 
 
@@ -66,7 +71,7 @@
 @import "CSS:../../bower_components/foundation-icons/foundation_icons_social/stylesheets/social_foundicons";
 @import "CSS:../../bower_components/foundation-icons/foundation_icons_social/stylesheets/social_foundicons_ie7";
 
-@import "CSS:../../bower_components/fuelux/dist/css/fuelux";
+//@import "CSS:../../bower_components/fuelux/dist/css/fuelux";
 
 @import "CSS:../../bower_components/jquery-file-upload/css/jquery.fileupload";
 @import "CSS:../../bower_components/jquery-file-upload/css/jquery.fileupload-noscript";
@@ -76,6 +81,10 @@
 @import "CSS:../../bower_components/select2/select2";
 @import "CSS:../../bower_components/select2/select2-bootstrap";
 
+
+body{
+	background-color:#efefef;
+}
 
 
 

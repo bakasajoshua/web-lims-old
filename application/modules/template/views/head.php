@@ -4,17 +4,18 @@
 
 
 <!--fav and touch icons -->
-<link rel="shortcut icon"  href="<?php echo base_url(); ?>/images/favicon.ico">
+<link rel="shortcut icon"  href="<?php echo base_url('images/favicon.ico'); ?>">
 <title><?php echo $title; ?></title>
 <!-- Styles -->
-<link rel="stylesheet" href="<?php echo base_url('assets/stylesheets/styles.css');?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/sass_assets/stylesheets/style.css');?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/webfont-opensans/stylesheet.css');?>">
+
+<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-datepicker/css/datepicker3.css');?>">
 
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-datepicker/css/datepicker3.css');?>">
 
 <!-- Calendar -->
 <link rel="stylesheet" href="<?php echo base_url().'assets/bower_components/fullcalendar/dist/fullcalendar.min.css'; ?>"/>
-<!-- <link rel="stylesheet" href="<?php echo base_url().'assets/modules/calendar/calendar.css'; ?>"/> -->
 
 <!-- Javascript -->
 <script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.js');?>"></script>
