@@ -10,7 +10,7 @@ class test extends MY_Controller {
 
 		parent::__construct();		
 
-        $this->view_data['contentView'] = "test/test_v";
+        $this->view_data['content_view'] = "test/test_v";
         $this->view_data['title'] = "TEST";
 	}
 

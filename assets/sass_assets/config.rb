@@ -3,6 +3,7 @@
 # Set this to the root of your project when deployed:
 require 'bootstrap-sass'
 require 'sass-css-importer'
+#require 'semantic-ui-sass'
 
 http_path = "/"
 css_dir = "stylesheets"
