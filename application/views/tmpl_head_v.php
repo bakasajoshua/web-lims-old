@@ -21,6 +21,6 @@
 
 <!-- Javascript -->
 <script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.js');?>"></script>
-<!--<script src="<?php echo base_url('assets/bower_components/semantic-ui/build/packaged/javascript/semantic.js');?>"></script>-->
+<script src="<?php echo base_url('assets/bower_components/semantic-ui/build/packaged/javascript/semantic.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js');?>"></script>
 
