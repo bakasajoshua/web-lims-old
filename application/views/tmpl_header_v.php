@@ -27,9 +27,8 @@ $(".launch-menu").click(function(){
      $("#main").removeClass("col-md-10");
      $("#main").addClass("col-md-12");
    }
- });
-
-
-  
+ });  
 })
+
+
 </script>

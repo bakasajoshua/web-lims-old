@@ -5,24 +5,49 @@
     </div>
     <div class="item">
       <i class="home icon"></i> Home
-      <div class="menu">
-        <a class="active item">Search</a>
-        <a class="item">Add</a>
-        <a class="item">Remove</a>
+    </div>
+    <div class="item">
+      <div class="ui accordion">
+        <div class="title">
+          <i class="dropdown icon"></i>
+          EID<i style="float:right;" class="fa-flask icon"></i>
+        </div>
+        <div class="content">
+          Dashboard
+        </div>
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Viral Load<i style="float:right;" class="fa-flask icon"></i>
+        </div>
+        <div class="content">
+          Dashboard
+        </div>
+        <div class="title">
+          <i class="dropdown icon"></i>
+          CD4<i style="float:right;" class="fa-flask icon"></i>
+        </div>
+        <div class="content">
+          Dashboard
+        </div>        
       </div>
     </div>
-    <a class="item">
-      <i class="grid layout icon"></i> Browse
-    </a>
-    <a class="item">
-      <i class="mail icon"></i> Messages
-    </a>
-    <div class="ui dropdown item">
-      More <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item"><i class="edit icon"></i> Edit Profile</a>
-        <a class="item"><i class="globe icon"></i> Choose Language</a>
-        <a class="item"><i class="settings icon"></i> Account Settings</a>
+    <div class="item">
+      <i class="home icon"></i> Facilities
+    </div>
+    <div class="item">
+      <i class="home icon"></i> CDRR
+    </div>
+    <div class="item">
+      <i class="home icon"></i> Reports
+    </div>
+    <div class="ui  item">
+      <div class="ui dropdown fluid selection">
+        More <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item"><i class="edit icon"></i> Edit Profile</a>
+          <a class="item"><i class="globe icon"></i> Choose Language</a>
+          <a class="item"><i class="settings icon"></i> Account Settings</a>
+        </div>
       </div>
     </div>
   </div>

@@ -41092,12 +41092,12 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   background: #DFF0D8 !important;
 }
 
-/* line 93, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 body {
   background-color: #efefef;
 }
 
-/* line 97, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 .head-title {
   background-color: #eaeaea;
   padding: 0.9375rem 1.25rem;
@@ -41107,7 +41107,36 @@ body {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
-/* line 108, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 ui.vertical.menu.min {
   width: 13rem !important;
+}
+
+/* line 117, ../sass/style.scss */
+#sidebar .item, #sidebar .label {
+  font-size: 14px !important;
+}
+/* line 120, ../sass/style.scss */
+#sidebar .active.eid {
+  color: #438eb9 !important;
+}
+/* line 122, ../sass/style.scss */
+#sidebar .active.eid .label {
+  background: #438eb9 !important;
+}
+/* line 126, ../sass/style.scss */
+#sidebar .active.vl {
+  color: #c6487e !important;
+}
+/* line 128, ../sass/style.scss */
+#sidebar .active.vl .label {
+  background: #c6487e !important;
+}
+/* line 132, ../sass/style.scss */
+#sidebar .active.cd4 {
+  color: #2e8965 !important;
+}
+/* line 134, ../sass/style.scss */
+#sidebar .active.cd4 .label {
+  background: #2e8965 !important;
 }

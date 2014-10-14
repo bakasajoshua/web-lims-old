@@ -87,7 +87,11 @@
 @import "CSS:../../bower_components/select2/select2-bootstrap";
 
 
+$page_background_color 	: #f1f1f1;
 
+$eid_main_color			: #438eb9;
+$vl_main_color			: #c6487e;
+$cd4_main_color			: #2e8965;
 
 
 body{
@@ -107,6 +111,31 @@ body{
 }
 ui.vertical.menu.min {
 	width: 13rem !important;
+}
+
+#sidebar{
+    .item,.label{
+        font-size:14px !important;
+    }
+    .active.eid{
+        color:$eid_main_color !important;
+        .label{
+            background:$eid_main_color !important;
+        }
+    }
+    .active.vl{
+        color:$vl_main_color !important;
+        .label{
+            background:$vl_main_color !important;
+        }
+    }
+    .active.cd4{
+        color:$cd4_main_color !important;
+        .label{
+            background:$cd4_main_color !important;
+        }
+    }
+
 }
 
 
