@@ -95,7 +95,7 @@ $cd4_main_color			: #2e8965;
 
 
 body{
-	background-color:#efefef;
+	background:#efefef url("../../images/pattern.jpg") repeat;
 }
 
 .head-title{
@@ -112,6 +112,11 @@ body{
 ui.vertical.menu.min {
 	width: 13rem !important;
 }
+
+
+
+
+
 
 #sidebar{
     .item,.label{
@@ -137,6 +142,7 @@ ui.vertical.menu.min {
     }
 
 }
+
 
 
 

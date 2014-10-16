@@ -11,6 +11,7 @@
 <!-- <link rel="stylesheet" href="<?php echo base_url('assets/semantic-ui-sass/stylesheets/styles.css');?>"> -->
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/webfont-opensans/stylesheet.css');?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/fontawesome/css/font-awesome.css');?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/lato/css/lato.css');?>">
 
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-datepicker/css/datepicker3.css');?>">
 

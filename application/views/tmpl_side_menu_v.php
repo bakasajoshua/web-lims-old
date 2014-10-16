@@ -32,13 +32,13 @@
       </div>
     </div>
     <div class="item">
-      <i class="home icon"></i> Facilities
+      <i class="fa-hospital-o icon"></i> Facilities
     </div>
     <div class="item">
-      <i class="home icon"></i> CDRR
+      <i class=" fa-file-text-o icon"></i> CDRR
     </div>
     <div class="item">
-      <i class="home icon"></i> Reports
+      <i class="fa-files-o icon"></i> Reports
     </div>
     <div class="ui  item">
       <div class="ui dropdown fluid selection">

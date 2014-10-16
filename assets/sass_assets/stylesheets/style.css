@@ -41094,7 +41094,7 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
 
 /* line 97, ../sass/style.scss */
 body {
-  background-color: #efefef;
+  background: #efefef url("../../images/pattern.jpg") repeat;
 }
 
 /* line 101, ../sass/style.scss */
@@ -41112,31 +41112,31 @@ ui.vertical.menu.min {
   width: 13rem !important;
 }
 
-/* line 117, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 #sidebar .item, #sidebar .label {
   font-size: 14px !important;
 }
-/* line 120, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 #sidebar .active.eid {
   color: #438eb9 !important;
 }
-/* line 122, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 #sidebar .active.eid .label {
   background: #438eb9 !important;
 }
-/* line 126, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 #sidebar .active.vl {
   color: #c6487e !important;
 }
-/* line 128, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 #sidebar .active.vl .label {
   background: #c6487e !important;
 }
-/* line 132, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 #sidebar .active.cd4 {
   color: #2e8965 !important;
 }
-/* line 134, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 #sidebar .active.cd4 .label {
   background: #2e8965 !important;
 }
