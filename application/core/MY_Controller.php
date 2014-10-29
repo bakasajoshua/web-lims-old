@@ -3,6 +3,8 @@
 /* The MX_Controller class is autoloaded as required */
 
 class  MY_Controller  extends  MX_Controller {
+
+	public $view_data;
 	
 	function __construct() {
 		parent::__construct();
