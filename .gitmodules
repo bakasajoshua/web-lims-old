@@ -1,0 +1,9 @@
+[submodule "application/libraries/PHPExcel"]
+	path = application/libraries/PHPExcel
+	url = https://github.com/PHPOffice/PHPExcel.git
+[submodule "system/libraries/mpdf"]
+	path = system/libraries/mpdf
+	url = https://github.com/finwe/mpdf.git
+[submodule "dbv"]
+	path = dbv
+	url = https://github.com/MwangiKevin/web-lims-dbv.git

@@ -12,6 +12,6 @@ class Login extends MY_Controller {
 	}
 
 	public function index() {
-		$this->load->view("login_v");
+		echo $this->config->item("copyrights");
 	}
 }
