@@ -5,51 +5,7 @@
 	<script src="<?php echo base_url('assets/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js');?>"></script>
 </head>
 
-<script>
-$(document).ready(function(){
-	$("#register_widget").hide();
-	$("#forgot_pass").hide();
-	$("#change_pass_widget").hide();
-	
-	$("#register_l").click(function(){
-		$("#login_widget").fadeOut(1000, function(){
-	    	$("#register_widget").fadeIn(2000);
-		});
-  	});
-  	$("#change_pass_l").click(function(){
-  		$("#login_widget").fadeOut(1000, function(){
-  			$("#change_pass_widget").fadeIn(1000);
-  		});
-  	})
-  	
-  	
-  	$("#login_r").click(function(){
-  		$("#register_widget").fadeOut(1000, function(){
-  			$("#login_widget").fadeIn(1000);
-  		});
-  	});
-  	$("#change_pass_r").click(function(){
-  		$("#register_widget").fadeOut(1000, function(){
-  			$("#change_pass_widget").fadeIn(1000);
-  		})
-  	}); 
-  	
-  	$("#login_cp").click(function(){
-  		$("#change_pass_widget").fadeOut(1000, function(){
-  			$("#login_widget").fadeIn(1000);
-  		})
-  	})
-  	$("#register_cp").click(function(){
-  		$("#change_pass_widget").fadeOut(1000, function(){
-  			$("#register_widget").fadeIn(1000);
-  		})
-  	})
-  	
-  	
-  	 	
-});
-	
-</script>
+
 <style>
 	label{
 		text-align: center;
@@ -96,22 +52,24 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-
-<div class="ui two column grid">
 	
+<div class="ui two column grid">
+<!--login form-->
   <div class="column" style="float: right; width: 30%; margin-top: 10%; margin-right: 8%;" id="login_widget">
     <div class="ui fluid form segment">
+	<center><div id="alert-l"></div></center>
       <h3 class="ui header" value="login">Log-in</h3>
-      	<form action="#" method="post">
+      	<form method="post" id="login_form">
       		<div class="field">
-		        <label>Username</label>
-		        <input placeholder="Username" type="text">
+		        <label>Email</label>
+		        <input placeholder="E-mail" name="email-l" id="email-l" type="text">
       		</div>
 	      	<div class="field">
 		        <label>Password</label>
-		        <input type="password" placeholder="Password">
+		        <input type="password" name="pass" id="pass" placeholder="Password">
 	      	</div>
-      		<div class="ui blue submit button" style="padding: 2%;">Login</div>
+      		<!-- <div class="ui blue submit button" style="padding: 2%;">Login</div> -->
+      		<input type="submit" class="ui blue submit button" value="Login" style="padding: 2%;">
       	</form>
       	<center>
       		<div id="widget-footer">
@@ -120,21 +78,24 @@ $(document).ready(function(){
 		      	</div>
 		      	<div id="left-widget">
 		      		<p id="register_l" style="padding: 0%; margin: 0%;font-size: smaller; cursor: pointer; color: #FF0000">Register</p>
-				<div id="left-widget">		      	
-	      	</div>
+	      		</div>
+      		</div>
       	</center>      
     </div>
   </div>
+<!--login form-->
   
+<!--forgot pass form-->  
 <div class="column" style="float: right; width: 30%; margin-top: 13%; margin-right: 8%;" id="change_pass_widget">
     <div class="ui fluid form segment">
-    	<form action="#" method="post">
-    		<h3 class="ui header" value="login">Change Password</h3>
+    	<center><div id="alert-f"></div></center>
+    	<h3 class="ui header" value="login">Change Password</h3>
+    	<form method="post" id="forgot_pass_form">
 	      	<div class="field">
 		        <label>Email Address</label>
-		        <input placeholder="email" type="text">
+		        <input placeholder="E-mail" type="text">
 	      	</div>
-	      	<div class="ui blue submit button" style="padding: 2%;">Send</div>
+	      	<input type="submit" class="ui blue submit button" style="padding: 2%;" value="Send"  />
       	</form>      	
       	<center>
       		<div  id="widget-footer">
@@ -148,26 +109,28 @@ $(document).ready(function(){
       	</center>
     </div>
   </div>
-  
+  <!--forgot pass form-->
+  <!--Register form-->
   <div class="column" id="register_widget" style="float:right; width: 30%;  margin-top: 10%; margin-right: 8%;">
     <div class="ui fluid form segment">
-    	<form action="#" method="post">
+    	<center><div id="alert-r"></div></center>
+    	<form method="post" id = "register_form">
     		<h3 class="ui header">Register</h3>
 	        <div class="field">
-	          <label>First Name</label>
-	          <input placeholder="First Name" type="text">
+	          <label>E-mail</label>
+	          <input placeholder="E-mail" name="email" id="email" type="text">
 	        </div>
 	        <div class="field">
-	          <label>Last Name</label>
-	          <input placeholder="Last Name" type="text">
+	          <label>Name</label>
+	          <input placeholder="Username" name="username" id="username" type="text">
 	        </div>
 	      <div class="field">
-	        <label>Username</label>
-	        <input placeholder="Username" type="text">
+	        <label>Password</label>
+	        <input placeholder="Password" name="pass" id="pass" type="password">
 	      </div>
 	      <div class="field">
-	        <label>Password</label>
-	        <input placeholder="Password" type="password">
+	        <label>Confirm-Password</label>
+	        <input placeholder="Confirm-Password" name="c-pass" id="c-pass" type="password">
 	      </div>
 	      <div class="inline field">
 	        <div class="ui checkbox">
@@ -175,7 +138,7 @@ $(document).ready(function(){
 	          <label for="conditions">I agree to the terms and conditions</label>
 	        </div>
 	      </div>
-	      <div class="ui blue submit button" style="padding: 2%;">Submit</div>
+	      <input type="submit" class="ui blue submit button" value="Submit" id="submit_register" style="padding: 2%;"/>
       </form>
       	<center>
       		<div id="widget-footer">
@@ -190,8 +153,14 @@ $(document).ready(function(){
       	
     </div>
   </div>
+  
+  <!--Register form-->
 </div>
+
+
 <div id="copyrights" style="position: absolute; left: 40%; right: 40%; bottom: 0%;">
 	<?php echo $this->config->item("copyrights") ?>
 </div>
 </body>
+
+<?php $this->load->view("login_footer_v.php"); ?>
