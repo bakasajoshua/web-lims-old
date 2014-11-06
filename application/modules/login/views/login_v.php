@@ -1,297 +1,197 @@
-<html lang="en"><!-- Mirrored from responsiweb.com/themes/preview/ace/1.3/login.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 22 Apr 2014 11:50:12 GMT -->
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta charset="utf-8">
-	<title><?php echo $title;?></title>
-
-	<meta name="description" content="User login page">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-	<!-- bootstrap & fontawesome -->
-	<link rel='stylesheet' href='<?php echo base_url();?>assets/sass_assets/sass/theme/font-awesome/4.0.3/css/font-awesome.min.css' type='text/css'></link>
-	<!-- <link rel='stylesheet' href='<?php echo base_url();?>assets/plugins/font-awesome/css/font-awesome.min.css' type='text/css'></link> -->
-	<link rel='stylesheet' href='<?php echo base_url();?>assets/sass_assets/stylesheets/styles.css' type='text/css'></link>
-
-	<?php      	
-		$this->load->view('utils/dynamicLoads');
-	?>
-
-	<!-- text fonts -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
+	<link rel="stylesheet" href="<?php echo base_url('assets/sass_assets/stylesheets/style.css');?>">
+	<script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.js');?>"></script>
+	<script src="<?php echo base_url('assets/bower_components/semantic-ui/build/packaged/javascript/semantic.js');?>"></script>
+	<script src="<?php echo base_url('assets/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js');?>"></script>
 </head>
 
-<body class="login-layout light-login">
-	<div id="navbar" class="navbar navbar-default ">
-	</div>
-	<div class="main-container">
-		<div class="main-content">
-			<br/>
-			<br/>
-			<br/>
-			<div class="row">
-				<div class="col-sm-6 col-sm-offset-1">
-					<center>
-						<div class="login-container"  style = " width:100%">
-							<h1 >
-								<i class="ace-icon fa fa-leaf green"></i>
-								<span class="blue" style="font-size:60px;">EID</span>
-								<span style="font-size:60px;">/</span>
-								<span class="red"  style="font-size:60px;">VL</span>
-								<span class="grey" id="id-text2" style="font-size:60px;">LIMS</span>
-							</h1>
-						</div>
-						<h2 class="blue"> (Early Infant Diagnosis)</h2>
-						<h2 class="red"> (Viral Load) </h2>
-					</center>
-					<img src="<?php echo base_url("img/tz.png");?>" height="140" width="100%" alt="NACP">
-				</div>
-				<div class="col-sm-3 ">
-					<div class="login-container"  style = "">						
-
-						<div class="space-6"></div>
-
-						<div class="position-relative">
-							<div id="login-box" class="login-box visible widget-box no-border">
-								<div class="widget-body">
-									<div class="widget-main">
-										<h4 class="header blue lighter bigger">
-											<i class="ace-icon fa fa-coffee green"></i>
-											Please Enter Your Information
-										</h4>
-
-										<div class="space-6"></div>
-										<?php 
-										if($login_fail){
-											?>
-											<div class="alert alert-danger" fade in>											
-												Login Unsuccessfull!
-												<button class="close" data-dismiss="alert">
-													<i class="ace-icon fa fa-times"></i>
-												</button>
-											</div>
-											<?php
-										}
-										?>
-										<?php echo form_open('login/process_credentials');?>
-										<fieldset>
-											<label class="block clearfix">
-												<span class="block input-icon input-icon-right">
-													<input type="text" class="form-control" name="username" placeholder="Username">
-													<i class="ace-icon fa fa-user"></i>
-												</span>
-											</label>
-
-											<label class="block clearfix">
-												<span class="block input-icon input-icon-right">
-													<input type="password" class="form-control" name="password" placeholder="Password">
-													<i class="ace-icon fa fa-lock"></i>
-												</span>
-											</label>
-
-											<label class="block clearfix">
-												<span class="block input-icon input-icon-right">
-													<select name="program" >
-														<option value="eid">Early Infant Diagnosis</option>
-														<option value="vl">Viral load</option>
-													</select>
-													<i class="ace-icon fa fa-lock"></i>
-												</span>
-											</label>
-
-											<div class="space"></div>
-
-											<div class="clearfix">
-												<label class="inline">
-													<input type="checkbox" class="ace">
-													<span class="lbl"> Remember Me</span>
-												</label>
-
-												<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
-													<i class="ace-icon fa fa-key"></i>
-													<span class="bigger-110">Login</span>
-												</button>
-											</div>
-
-											<div class="space-4"></div>
-										</fieldset>
-									</form>
-								</div><!-- /.widget-main -->
-
-								<div class="toolbar clearfix">
-									<div>
-										<a href="#" data-target="#forgot-box" class="forgot-password-link">
-											<i class="ace-icon fa fa-arrow-left"></i>
-											I forgot my password
-										</a>
-									</div>
-
-									<div>
-										<a href="#" data-target="#signup-box" class="user-signup-link">
-											I want to register
-											<i class="ace-icon fa fa-arrow-right"></i>
-										</a>
-									</div>
-								</div>
-							</div><!-- /.widget-body -->
-						</div><!-- /.login-box -->
-
-						<div id="forgot-box" class="forgot-box widget-box no-border">
-							<div class="widget-body">
-								<div class="widget-main">
-									<h4 class="header red lighter bigger">
-										<i class="ace-icon fa fa-key"></i>
-										Retrieve Password
-									</h4>
-
-									<div class="space-6"></div>
-									<p>
-										Enter your email and to receive instructions
-									</p>
+<script>
+$(document).ready(function(){
+	$("#register_widget").hide();
+	$("#forgot_pass").hide();
+	$("#change_pass_widget").hide();
+	
+	$("#register_l").click(function(){
+		$("#login_widget").fadeOut(1000, function(){
+	    	$("#register_widget").fadeIn(2000);
+		});
+  	});
+  	$("#change_pass_l").click(function(){
+  		$("#login_widget").fadeOut(1000, function(){
+  			$("#change_pass_widget").fadeIn(1000);
+  		});
+  	})
+  	
+  	
+  	$("#login_r").click(function(){
+  		$("#register_widget").fadeOut(1000, function(){
+  			$("#login_widget").fadeIn(1000);
+  		});
+  	});
+  	$("#change_pass_r").click(function(){
+  		$("#register_widget").fadeOut(1000, function(){
+  			$("#change_pass_widget").fadeIn(1000);
+  		})
+  	}); 
+  	
+  	$("#login_cp").click(function(){
+  		$("#change_pass_widget").fadeOut(1000, function(){
+  			$("#login_widget").fadeIn(1000);
+  		})
+  	})
+  	$("#register_cp").click(function(){
+  		$("#change_pass_widget").fadeOut(1000, function(){
+  			$("#register_widget").fadeIn(1000);
+  		})
+  	})
+  	
+  	
+  	 	
+});
+	
+</script>
+<style>
+	label{
+		text-align: center;
+	}
+#login_widget	{
+		-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	  	box-shadow:         3px 3px 5px 6px #ccc;
+	}
+#change_pass_widget	{
+		-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	  	box-shadow:         3px 3px 5px 6px #ccc;
+	}
+#register_widget	{
+		-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	  	box-shadow:         3px 3px 5px 6px #ccc;
+	}	
+#widget-footer{
+	padding: 0px; 
+	margin-top: 1%;
+}	
+#left-widget{
+	width: 50%;
+	float: left; 
+	background-color:#CCCC99;
+}
+</style>
 
 
-									<?php echo form_open('login/request_pwd_reset');?>
-
-									<fieldset>
-										<label class="block clearfix">
-											<span class="block input-icon input-icon-right">
-												<input type="email" class="form-control" placeholder="Email">
-												<i class="ace-icon fa fa-envelope"></i>
-											</span>
-										</label>
-
-										<div class="clearfix">
-											<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
-												<i class="ace-icon fa fa-lightbulb-o"></i>
-												<span class="bigger-110">Send Me!</span>
-											</button>
-										</div>
-									</fieldset>
-								</form>
-							</div><!-- /.widget-main -->
-
-							<div class="toolbar center">
-								<a href="#" data-target="#login-box" class="back-to-login-link">
-									Back to login
-									<i class="ace-icon fa fa-arrow-right"></i>
-								</a>
-							</div>
-						</div><!-- /.widget-body -->
-					</div><!-- /.forgot-box -->
-
-					<div id="signup-box" class="signup-box widget-box no-border">
-						<div class="widget-body">
-							<div class="widget-main">
-								<h4 class="header green lighter bigger">
-									<i class="ace-icon fa fa-users blue"></i>
-									New User Registration
-								</h4>
-
-								<div class="space-6"></div>
-								<p> Enter your details to begin: </p>
-
-								<form>
-									<fieldset>
-										<label class="block clearfix">
-											<span class="block input-icon input-icon-right">
-												<input type="email" class="form-control" placeholder="Email">
-												<i class="ace-icon fa fa-envelope"></i>
-											</span>
-										</label>
-
-										<label class="block clearfix">
-											<span class="block input-icon input-icon-right">
-												<input type="text" class="form-control" placeholder="Username">
-												<i class="ace-icon fa fa-user"></i>
-											</span>
-										</label>
-
-										<label class="block clearfix">
-											<span class="block input-icon input-icon-right">
-												<input type="password" class="form-control" placeholder="Password">
-												<i class="ace-icon fa fa-lock"></i>
-											</span>
-										</label>
-
-										<label class="block clearfix">
-											<span class="block input-icon input-icon-right">
-												<input type="password" class="form-control" placeholder="Repeat password">
-												<i class="ace-icon fa fa-retweet"></i>
-											</span>
-										</label>
-
-										<label class="block">
-											<input type="checkbox" class="ace">
-											<span class="lbl">
-												I accept the
-												<a href="#">User Agreement</a>
-											</span>
-										</label>
-
-										<div class="space-24"></div>
-
-										<div class="clearfix">
-											<button type="reset" class="width-30 pull-left btn btn-sm">
-												<i class="ace-icon fa fa-refresh"></i>
-												<span class="bigger-110">Reset</span>
-											</button>
-
-											<button type="button" class="width-65 pull-right btn btn-sm btn-success">
-												<span class="bigger-110">Register</span>
-
-												<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-											</button>
-										</div>
-									</fieldset>
-								</form>
-							</div>
-
-							<div class="toolbar center">
-								<a href="#" data-target="#login-box" class="back-to-login-link">
-									<i class="ace-icon fa fa-arrow-left"></i>
-									Back to login
-								</a>
-							</div>
-						</div><!-- /.widget-body -->
-					</div><!-- /.signup-box -->
-				</div><!-- /.position-relative -->
-
+<body>
+	<div class="col-md-6 head-title" style="margin-left: 10%; margin-top: 13%;">
+		<h1 class="ui teal header"> WEB-LIMS</h1>
+		<div class="row" style="width:100%">
+			<div class="" style="width:20%;float:left;">
+				<img width="" height="" style="height:100px;width:100px;" alt="" src="http://127.0.0.1/web-lims/assets/images/tz.png">
 			</div>
-		</div><!-- /.col -->
-	</div><!-- /.row -->
-</div><!-- /.main-content -->
-</div><!-- /.main-container -->
-
-<div class="footer">
-	<div class="footer-inner" style="position :fixed;background:#fff;">
-		<div class="footer-content" style = "height: 35px;">
-			<span class="bigger-120" >
-				<span class="blue"><?php echo $this->config->item("copyrights");?></span>
-			</span>
+			<div class="" style="width:60%;float:left;">
+				<h5>The United Republic of Tanzania</h5>
+			</div>
+			<div class="" style="width:20%;float:left;">
+				<img width="" height="" style="height:100px;width:105px;" alt="" src="http://127.0.0.1/web-lims/assets/images/nacp.png">
+			</div>
 		</div>
 	</div>
+
+<div class="ui two column grid">
+	
+  <div class="column" style="float: right; width: 30%; margin-top: 10%; margin-right: 8%;" id="login_widget">
+    <div class="ui fluid form segment">
+      <h3 class="ui header" value="login">Log-in</h3>
+      	<form action="#" method="post">
+      		<div class="field">
+		        <label>Username</label>
+		        <input placeholder="Username" type="text">
+      		</div>
+	      	<div class="field">
+		        <label>Password</label>
+		        <input type="password" placeholder="Password">
+	      	</div>
+      		<div class="ui blue submit button" style="padding: 2%;">Login</div>
+      	</form>
+      	<center>
+      		<div id="widget-footer">
+      			<div id="left-widget">
+		      		<p id="change_pass_l"  style="padding: 0%; margin: 0%; font-size: smaller; cursor: pointer; color: #FF0000;">Forgot Password</p>
+		      	</div>
+		      	<div id="left-widget">
+		      		<p id="register_l" style="padding: 0%; margin: 0%;font-size: smaller; cursor: pointer; color: #FF0000">Register</p>
+				<div id="left-widget">		      	
+	      	</div>
+      	</center>      
+    </div>
+  </div>
+  
+<div class="column" style="float: right; width: 30%; margin-top: 13%; margin-right: 8%;" id="change_pass_widget">
+    <div class="ui fluid form segment">
+    	<form action="#" method="post">
+    		<h3 class="ui header" value="login">Change Password</h3>
+	      	<div class="field">
+		        <label>Email Address</label>
+		        <input placeholder="email" type="text">
+	      	</div>
+	      	<div class="ui blue submit button" style="padding: 2%;">Send</div>
+      	</form>      	
+      	<center>
+      		<div  id="widget-footer">
+      			<div id="left-widget">
+      				<p id="register_cp" style="padding: 0%; margin: 0%;font-size: smaller; cursor: pointer; color: #FF0000">Register</p>	
+      			</div>
+      			<div id="left-widget">
+      				<p id="login_cp" style="padding: 0%; margin: 0%; font-size: smaller; cursor: pointer; color: #FF0000">Login</p>
+      			</div>
+	      	</div>
+      	</center>
+    </div>
+  </div>
+  
+  <div class="column" id="register_widget" style="float:right; width: 30%;  margin-top: 10%; margin-right: 8%;">
+    <div class="ui fluid form segment">
+    	<form action="#" method="post">
+    		<h3 class="ui header">Register</h3>
+	        <div class="field">
+	          <label>First Name</label>
+	          <input placeholder="First Name" type="text">
+	        </div>
+	        <div class="field">
+	          <label>Last Name</label>
+	          <input placeholder="Last Name" type="text">
+	        </div>
+	      <div class="field">
+	        <label>Username</label>
+	        <input placeholder="Username" type="text">
+	      </div>
+	      <div class="field">
+	        <label>Password</label>
+	        <input placeholder="Password" type="password">
+	      </div>
+	      <div class="inline field">
+	        <div class="ui checkbox">
+	          <input id="conditions" type="checkbox">
+	          <label for="conditions">I agree to the terms and conditions</label>
+	        </div>
+	      </div>
+	      <div class="ui blue submit button" style="padding: 2%;">Submit</div>
+      </form>
+      	<center>
+      		<div id="widget-footer">
+      			<div id="left-widget">
+		      		<p id="change_pass_r" style="padding: 0%; margin: 0%; font-size: smaller; cursor: pointer; color: #FF0000">Forgot Password</p>
+		      	</div>
+		      	<div id="left-widget">
+		      		<p id="login_r" style="padding: 0%; margin: 0%;font-size: smaller; cursor: pointer; color: #FF0000">Login</p>
+		      	</div>
+	      	</div>
+      	</center>      
+      	
+    </div>
+  </div>
 </div>
-
-
-<script type="text/javascript">
-window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-</script>
-
-
-<script type="text/javascript">
-if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-</script>
-
-<script type="text/javascript">
-jQuery(function($) {
-	$(document).on('click', '.toolbar a[data-target]', function(e) {
-		e.preventDefault();
-		var target = $(this).data('target');
-				$('.widget-box.visible').removeClass('visible');//hide others
-				$(target).addClass('visible');//show target
-			});
-});
-
-</script>
-
+<div id="copyrights" style="position: absolute; left: 40%; right: 40%; bottom: 0%;">
+	<?php echo $this->config->item("copyrights") ?>
+</div>
 </body>
-</html>
